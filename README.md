@@ -1,6 +1,6 @@
 # WP Minimal Maintenance Mode
 
-![Maintenance Mode Screenshot](/images/activated.png)
+![Maintenance Mode Screenshot](/assets/activated.png)
 
 ## Description
 
@@ -37,7 +37,7 @@ If you need to access your website during maintenance mode, you can use the foll
 
 ## Screenshots
 
-![Settings Page](/images/settings.png)
+![Settings Page](/assets/settings.png)
 
 ## Contributing
 
