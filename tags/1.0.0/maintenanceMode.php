@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Minimal Maintenance Mode
- * Plugin URI: https://github.com/StachRedeker/WP-Minimal-Maintenance-Mode
+ * Plugin URI: https://github.com/StachRedeker/Minimal-Maintenance-Mode
  * Description: The most minimalistic maintenance mode plugin. Enable maintenance mode, show a custom message.
  * Version: 1.0.0
  * Author: Stach Redeker

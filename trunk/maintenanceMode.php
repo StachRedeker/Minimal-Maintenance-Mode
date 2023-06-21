@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: WP Minimal Maintenance Mode
- * Plugin URI: https://github.com/StachRedeker/WP-Minimal-Maintenance-Mode
+ * Plugin Name: Minimal Maintenance Mode
+ * Plugin URI: https://github.com/StachRedeker/Minimal-Maintenance-Mode
  * Description: The most minimalistic maintenance mode plugin. Enable maintenance mode, show a custom message.
  * Version: 1.0.0
  * Author: Stach Redeker
@@ -149,7 +149,7 @@ function maintenance_mode_settings() {
   // ADMIN SETTINGS PAGE
   ?>
   <div class="wrap">
-    <h1>WP Minimal Maintenance Mode</h1>
+    <h1>Minimal Maintenance Mode</h1>
     <?php if (isset($message)) { ?>
       <div class="notice notice-success is-dismissible">
         <p><?php echo $message; ?></p>
@@ -221,16 +221,16 @@ function maintenance_mode_plugin_settings_link($links) {
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'maintenance_mode_plugin_settings_link');
 
 /*
-WP Minimal Maintenance Mode is free software: you can redistribute it and/or modify
+Minimal Maintenance Mode is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 any later version.
 
-WP Minimal Maintenance Mode is distributed in the hope that it will be useful,
+Minimal Maintenance Mode is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with WP Minimal Maintenance Mode. If not, see https://gnu.org/licenses/gpl-3.0.html.
+along with Minimal Maintenance Mode. If not, see https://gnu.org/licenses/gpl-3.0.html.
 */

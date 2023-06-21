@@ -51,7 +51,7 @@ This plugin does not:
 _Image: Settings page._
 
 ## Support
-Please use the appropriate forums, [issues on Github](https://github.com/StachRedeker/WP-Minimal-Maintenance-Mode/issues), or send an [email](mailto:info@stachredeker.nl).
+Please use the appropriate forums, [issues on Github](https://github.com/StachRedeker/Minimal-Maintenance-Mode/issues), or send an [email](mailto:info@stachredeker.nl).
 
 ## Contributing
 This plugin is deliberately simple. It is made as a foolproof, quick, and privacy-friendly way for site administrators to activate a maintenance mode. This plugin will not be extended with loads of features, such as templates and styling options; there are plenty of other maintenance plugins to pick that do offer these options. If you nevertheless think that you can contribute to the plugin (e.g. by submitting a bug fix), please open a pull request. 
