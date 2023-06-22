@@ -40,7 +40,7 @@ This plugin does not:
 
 - track users;
 - write any user personal data to the database;
-- send any data to external servers;
+- send any data to external servers.
 
 ## Screenshots
 ![Settings Page](/assets/settings.png)
