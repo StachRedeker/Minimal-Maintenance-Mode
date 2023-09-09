@@ -57,3 +57,4 @@ The Minimal Maintenance Mode plugin is licensed under the [GNU General Public Li
 
 ## Changelog
 v1.0.0 Stable version of the plugin.
+v1.0.1 Escaped variables and options in the plugin.
