@@ -56,5 +56,5 @@ This plugin is deliberately simple. It is made as a foolproof, quick, and privac
 The Minimal Maintenance Mode plugin is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## Changelog
-v1.0.0 Stable version of the plugin.
-v1.0.1 Escaped variables and options in the plugin.
+- v1.0.0 Stable version of the plugin.
+- v1.0.1 Escaped variables and options in the plugin.
