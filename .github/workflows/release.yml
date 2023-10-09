@@ -1,29 +1,35 @@
 name: Deploy to WordPress.org
-on:
-  release:
-    types: [published]
-  workflow_dispatch:  
+
+on: 
+  workflow_dispatch:
 
 jobs:
-  tag:
+  deploy:
     runs-on: ubuntu-latest
+    
     steps:
-    - name: Checkout code
+    - name: Check out repository
       uses: actions/checkout@v2
 
     - name: Set up SVN
       run: sudo apt-get install -y subversion
 
-    - name: Publish to SVN
+    - name: Set up SVN credentials
+      env:
+        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+        SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
       run: |
-        mkdir ./svn
-        svn checkout --depth immediates "https://plugins.svn.wordpress.org/minimal-maintenance-mode" ./svn
-        svn update --set-depth infinity ./svn/tags/$GITHUB_REF
+        svn() {
+          command svn --non-interactive --no-auth-cache --username "$SVN_USERNAME" --password "$SVN_PASSWORD" "$@"
+        }
+        export -f svn
 
-        rsync -a --exclude=".svn" ./assets/ ./svn/assets/
-        rsync -a --exclude=".svn" ./trunk/ ./svn/trunk/
-        rsync -a --exclude=".svn" ./tags/$GITHUB_REF/ ./svn/tags/$GITHUB_REF/
-
-        cd ./svn
+    - name: Deploy to WordPress.org
+      run: |
+        svn checkout https://plugins.svn.wordpress.org/minimal-maintenance-mode svn
+        cp -R assets/* svn/assets/
+        cp -R trunk/* svn/trunk/
+        cp -R tags/* svn/tags/
+        cd svn
         svn add --force * --auto-props --parents --depth infinity -q
-        svn commit -m "Release $GITHUB_REF, build $GITHUB_RUN_ID" --username ${{ secrets.SVN_USERNAME }} --password ${{ secrets.SVN_PASSWORD }}
+        svn commit -m "Deploying version $(git describe --tags --abbrev=0) to WordPress.org"
