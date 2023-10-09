@@ -1,35 +1,21 @@
 name: Deploy to WordPress.org
-
-on: 
-  workflow_dispatch:
-
+on:
+  push:
+    tags:
+    - "*"
 jobs:
-  deploy:
+  tag:
+    name: New tag
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
-
-    - name: Set up SVN
-      run: sudo apt-get install -y subversion
-
-    - name: Set up SVN credentials
+    - uses: actions/checkout@master
+    - name: Build
+      run: |
+        npm install
+        npm run build
+    - name: WordPress Plugin Deploy
+      uses: 10up/action-wordpress-plugin-deploy@stable
       env:
-        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-      run: |
-        svn() {
-          command svn --non-interactive --no-auth-cache --username "$SVN_USERNAME" --password "$SVN_PASSWORD" "$@"
-        }
-        export -f svn
-
-    - name: Deploy to WordPress.org
-      run: |
-        svn checkout https://plugins.svn.wordpress.org/minimal-maintenance-mode svn
-        cp -R assets/* svn/assets/
-        cp -R trunk/* svn/trunk/
-        cp -R tags/* svn/tags/
-        cd svn
-        svn add --force * --auto-props --parents --depth infinity -q
-        svn commit -m "Deploying version $(git describe --tags --abbrev=0) to WordPress.org"
+        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+        SLUG: minimal-maintenance-mode
