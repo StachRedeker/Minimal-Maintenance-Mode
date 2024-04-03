@@ -2,7 +2,7 @@
 Contributors: stachredeker
 Tags: maintenance mode, simple, minimal, maintenance, under construction
 Requires at least: 5.3
-Tested up to: 6.4
+Tested up to: 6.5
 Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: https://gnu.org/licenses/gpl-3.0.html
