@@ -4,7 +4,7 @@
 ## Description
 The Minimal Maintenance Mode plugin is a simple and lightweight solution to enable a maintenance mode on your WordPress website. The plugin is free, fast, and can be deployed within minutes.
 When the maintenance mode is active, the plugin displays a customizable message for all not-logged-in users.
-It is possible to set a custom secret phrase that users can append to the website URL to get access, even if they are not logged in.
+It is possible to set a custom secret word that users can append to the website URL to get access, even if they are not logged in.
 
 ![Maintenance Mode in action](/assets/activated.png)
 _Image: Minimal Maintenance Mode in action._
@@ -13,7 +13,7 @@ _Image: Minimal Maintenance Mode in action._
 - Enable a maintenance mode to restrict access to your website.
 - Customize the maintenance mode message and heading.
 - Automatic bypass for logged-in users and administrators.
-- Option to set a secret phrase to bypass maintenance mode via URL parameter.
+- Option to set a secret word to bypass maintenance mode via URL parameter.
 
 ## Installation
 1. Download the [latest release](https://github.com/StachRedeker/WP-Minimal-Maintenance-Mode/releases) of the plugin.
@@ -26,14 +26,14 @@ To enable maintenance mode and set the message displayed during maintenance, fol
 
 1. Go to the WordPress admin menu and click on 'Maintenance Mode'.
 2. Customize the maintenance mode heading and message.
-3. (Optional) Pick a secret phrase to let not-logged-in users bypass the maintenance mode.
+3. (Optional) Pick a secret word to let not-logged-in users bypass the maintenance mode.
 4. Save the settings and activate the maintenance mode by pressing 'Save and activate'.
 
 ### Bypassing maintenance mode
 If you need to access your website during maintenance mode, you can use the following methods:
 
 1. **For administrators and logged-in users**: logged-in users can access the website normally. Also, the `/wp-admin/` pages will not be blocked.
-2. **Using the secret phrase**: Append `?[SECRET PHRASE]` to any URL to bypass the maintenance mode for a week. A functional cookie is placed on the user's machine to make this work. If the secret phrase is changed, access using the old secret phrase is revoked immediately. The secret phrase can be configured in the advanced plugin settings.
+2. **Using the secret word**: Append `?[SECRET WORD]` to any URL to bypass the maintenance mode for a week. A functional cookie is placed on the user's machine to make this work. If the secret word is changed, access using the old secret word is revoked immediately. The secret word can be configured in the advanced plugin settings.
 
 ## Privacy notices
 This plugin does not:
@@ -58,3 +58,4 @@ The Minimal Maintenance Mode plugin is licensed under the [GNU General Public Li
 ## Changelog
 - v1.0.0 Stable version of the plugin.
 - v1.0.1 Escaped variables and options in the plugin.
+- v1.0.2 Changed "secret phrase" to "secret word" for clarity.
